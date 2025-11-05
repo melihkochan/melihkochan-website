@@ -1,0 +1,124 @@
+/* [project]/app/windows10-components/Calculator.module.css [app-client] (css) */
+.Calculator-module__x4UYJW__calculatorContainer {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.Calculator-module__x4UYJW__displayContainer {
+  background: #ffffff1a;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid #fff3;
+  box-shadow: 0 8px 16px #0003;
+}
+
+.Calculator-module__x4UYJW__display {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Calculator-module__x4UYJW__buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  flex: 1;
+}
+
+.Calculator-module__x4UYJW__button {
+  background: #ffffff26;
+  backdrop-filter: blur(20px);
+  border: 1px solid #fff3;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.Calculator-module__x4UYJW__button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #fff3;
+  transform: translate(-50%, -50%);
+  transition: width .6s, height .6s;
+}
+
+.Calculator-module__x4UYJW__button:hover:before {
+  width: 300px;
+  height: 300px;
+}
+
+.Calculator-module__x4UYJW__button:hover {
+  background: #ffffff40;
+  border-color: #ffffff4d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.Calculator-module__x4UYJW__button:active {
+  transform: translateY(0)scale(.98);
+  box-shadow: 0 2px 8px #0000004d, inset 0 1px #ffffff1a;
+}
+
+.Calculator-module__x4UYJW__clearButton {
+  background: #ff64644d;
+}
+
+.Calculator-module__x4UYJW__clearButton:hover {
+  background: #ff646480;
+}
+
+.Calculator-module__x4UYJW__functionButton {
+  background: #c8c8c833;
+}
+
+.Calculator-module__x4UYJW__functionButton:hover {
+  background: #c8c8c84d;
+}
+
+.Calculator-module__x4UYJW__operatorButton {
+  background: #ffc832cc;
+  color: #fff;
+}
+
+.Calculator-module__x4UYJW__operatorButton:hover {
+  background: #ffc832;
+}
+
+.Calculator-module__x4UYJW__zeroButton {
+  grid-column: span 2;
+}
+
+.Calculator-module__x4UYJW__equalsButton {
+  background: #64c864cc;
+  color: #fff;
+}
+
+.Calculator-module__x4UYJW__equalsButton:hover {
+  background: #64c864;
+}
+
+/*# sourceMappingURL=app_windows10-components_Calculator_module_b52d8e.css.map*/

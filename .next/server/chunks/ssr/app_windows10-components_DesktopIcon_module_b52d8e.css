@@ -1,0 +1,207 @@
+/* [project]/app/windows10-components/DesktopIcon.module.css [app-client] (css) */
+.DesktopIcon-module__NWkxIa__iconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 130px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  position: relative;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer:hover {
+  background-color: #ffffff14;
+  transform: translateY(-3px);
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer.DesktopIcon-module__NWkxIa__selected {
+  background-color: #fff3;
+  border: 2px solid #ffffff80;
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer.DesktopIcon-module__NWkxIa__refreshing {
+  animation: .5s ease-in-out DesktopIcon-module__NWkxIa__pulse;
+}
+
+@keyframes DesktopIcon-module__NWkxIa__pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.DesktopIcon-module__NWkxIa__icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+  background: #ffffff26;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 8px 16px #0000004d, 0 4px 8px #0003, inset 0 1px #ffffff4d;
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid #ffffff4d;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.DesktopIcon-module__NWkxIa__icon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff4d 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer:hover .DesktopIcon-module__NWkxIa__icon {
+  transform: translateY(-6px)scale(1.05);
+  box-shadow: 0 12px 24px #0006, 0 8px 16px #0000004d, inset 0 1px #fff6;
+  background: #ffffff40;
+  border-color: #ffffff80;
+}
+
+.DesktopIcon-module__NWkxIa__spinning {
+  display: inline-block;
+  animation: 1s linear infinite DesktopIcon-module__NWkxIa__spin;
+}
+
+@keyframes DesktopIcon-module__NWkxIa__spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.DesktopIcon-module__NWkxIa__label {
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  line-height: 1.2;
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  transition: all .2s;
+  margin-top: 5px;
+  z-index: 10;
+  color: #fff !important;
+  font-size: 12px !important;
+  text-shadow: 0 2px 4px #000c, 0 0 8px #000c !important;
+  background: linear-gradient(135deg, #000c 0%, #0009 100%) !important;
+  padding: 4px 6px !important;
+  border: 1px solid #fff3 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer:hover .DesktopIcon-module__NWkxIa__label {
+  background: linear-gradient(135deg, #000c 0%, #0009 100%);
+  border-color: #fff3;
+}
+
+.DesktopIcon-module__NWkxIa__contextMenu {
+  position: fixed;
+  transform: translateY(8px);
+  background: #282828f2;
+  backdrop-filter: blur(20px);
+  border: 1px solid #fff3;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px #00000080;
+  padding: 4px;
+  min-width: 150px;
+  z-index: 10001;
+  animation: .2s DesktopIcon-module__NWkxIa__fadeIn;
+}
+
+@keyframes DesktopIcon-module__NWkxIa__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+}
+
+.DesktopIcon-module__NWkxIa__contextMenuItem {
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all .2s;
+}
+
+.DesktopIcon-module__NWkxIa__contextMenuItem:hover {
+  background-color: #ffffff1a;
+}
+
+.DesktopIcon-module__NWkxIa__contextMenuItem:active {
+  background-color: #fff3;
+}
+
+@media (width <= 768px) {
+  .DesktopIcon-module__NWkxIa__iconContainer {
+    width: 100px;
+    height: 110px;
+    padding: 10px;
+  }
+
+  .DesktopIcon-module__NWkxIa__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    padding: 12px;
+  }
+
+  .DesktopIcon-module__NWkxIa__label {
+    min-height: 28px;
+    font-size: 11px !important;
+  }
+}
+
+@media (width <= 480px) {
+  .DesktopIcon-module__NWkxIa__iconContainer {
+    width: 80px;
+    height: 90px;
+    padding: 8px;
+  }
+
+  .DesktopIcon-module__NWkxIa__icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .DesktopIcon-module__NWkxIa__label {
+    min-height: 24px;
+    font-size: 10px !important;
+    padding: 2px 4px !important;
+  }
+}
+
+/*# sourceMappingURL=app_windows10-components_DesktopIcon_module_b52d8e.css.map*/

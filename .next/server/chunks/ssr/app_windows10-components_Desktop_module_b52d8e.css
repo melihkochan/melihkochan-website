@@ -1,0 +1,83 @@
+/* [project]/app/windows10-components/Desktop.module.css [app-client] (css) */
+.Desktop-module__yaRb_a__desktop {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  padding-top: 50px;
+  background: url("/images/windows-wallpaper.png") center / cover no-repeat;
+  min-height: 100vh;
+}
+
+.Desktop-module__yaRb_a__iconGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  max-width: 600px;
+  position: absolute;
+  z-index: 5;
+}
+
+@media (width <= 768px) {
+  .Desktop-module__yaRb_a__desktop {
+    padding-top: 80px;
+  }
+
+  .Desktop-module__yaRb_a__iconGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    max-width: 100%;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (width <= 480px) {
+  .Desktop-module__yaRb_a__desktop {
+    padding-top: 60px;
+  }
+
+  .Desktop-module__yaRb_a__iconGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+.Desktop-module__yaRb_a__iconGrid > :first-child {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(2), .Desktop-module__yaRb_a__iconGrid > :nth-child(3) {
+  grid-column: auto;
+  justify-self: start;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(4) {
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(5) {
+  grid-column: 2 / 3;
+  justify-self: start;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(6) {
+  grid-column: 1 / 2;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(7) {
+  grid-column: 2 / 3;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(8) {
+  grid-column: 3 / 4;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(9) {
+  grid-column: 4 / 5;
+}
+
+/*# sourceMappingURL=app_windows10-components_Desktop_module_b52d8e.css.map*/

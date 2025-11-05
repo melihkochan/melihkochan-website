@@ -1,0 +1,2671 @@
+/* [project]/app/windows10-components/DesktopIcon.module.css [app-client] (css) */
+.DesktopIcon-module__NWkxIa__iconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 130px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  position: relative;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer:hover {
+  background-color: #ffffff14;
+  transform: translateY(-3px);
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer.DesktopIcon-module__NWkxIa__selected {
+  background-color: #fff3;
+  border: 2px solid #ffffff80;
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer.DesktopIcon-module__NWkxIa__refreshing {
+  animation: .5s ease-in-out DesktopIcon-module__NWkxIa__pulse;
+}
+
+@keyframes DesktopIcon-module__NWkxIa__pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.DesktopIcon-module__NWkxIa__icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+  background: #ffffff26;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 8px 16px #0000004d, 0 4px 8px #0003, inset 0 1px #ffffff4d;
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid #ffffff4d;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.DesktopIcon-module__NWkxIa__icon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff4d 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer:hover .DesktopIcon-module__NWkxIa__icon {
+  transform: translateY(-6px)scale(1.05);
+  box-shadow: 0 12px 24px #0006, 0 8px 16px #0000004d, inset 0 1px #fff6;
+  background: #ffffff40;
+  border-color: #ffffff80;
+}
+
+.DesktopIcon-module__NWkxIa__spinning {
+  display: inline-block;
+  animation: 1s linear infinite DesktopIcon-module__NWkxIa__spin;
+}
+
+@keyframes DesktopIcon-module__NWkxIa__spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.DesktopIcon-module__NWkxIa__label {
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  line-height: 1.2;
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  transition: all .2s;
+  margin-top: 5px;
+  z-index: 10;
+  color: #fff !important;
+  font-size: 12px !important;
+  text-shadow: 0 2px 4px #000c, 0 0 8px #000c !important;
+  background: linear-gradient(135deg, #000c 0%, #0009 100%) !important;
+  padding: 4px 6px !important;
+  border: 1px solid #fff3 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.DesktopIcon-module__NWkxIa__iconContainer:hover .DesktopIcon-module__NWkxIa__label {
+  background: linear-gradient(135deg, #000c 0%, #0009 100%);
+  border-color: #fff3;
+}
+
+.DesktopIcon-module__NWkxIa__contextMenu {
+  position: fixed;
+  transform: translateY(8px);
+  background: #282828f2;
+  backdrop-filter: blur(20px);
+  border: 1px solid #fff3;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px #00000080;
+  padding: 4px;
+  min-width: 150px;
+  z-index: 10001;
+  animation: .2s DesktopIcon-module__NWkxIa__fadeIn;
+}
+
+@keyframes DesktopIcon-module__NWkxIa__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+}
+
+.DesktopIcon-module__NWkxIa__contextMenuItem {
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all .2s;
+}
+
+.DesktopIcon-module__NWkxIa__contextMenuItem:hover {
+  background-color: #ffffff1a;
+}
+
+.DesktopIcon-module__NWkxIa__contextMenuItem:active {
+  background-color: #fff3;
+}
+
+
+/* [project]/app/windows10-components/Window.module.css [app-client] (css) */
+.Window-module__o6U_EW__window {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 5px 25px #0000004d;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 100;
+  outline: none;
+  user-select: none;
+  transition: width .2s, height .2s;
+  contain: layout style;
+  pointer-events: auto;
+}
+
+.Window-module__o6U_EW__browserWindow {
+  z-index: 101;
+}
+
+.Window-module__o6U_EW__maximized {
+  border-radius: 0;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: calc(100vh - 40px) !important;
+}
+
+.Window-module__o6U_EW__active {
+  box-shadow: 0 5px 35px #00000080;
+}
+
+.Window-module__o6U_EW__titleBar {
+  height: 32px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: move;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.Window-module__o6U_EW__active .Window-module__o6U_EW__titleBar {
+  background-color: #dfdfdf;
+}
+
+.Window-module__o6U_EW__titleBarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.Window-module__o6U_EW__appIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.Window-module__o6U_EW__title {
+  font-size: 12px;
+}
+
+.Window-module__o6U_EW__titleBarControls {
+  display: flex;
+}
+
+.Window-module__o6U_EW__control {
+  width: 46px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 100;
+}
+
+.Window-module__o6U_EW__close:hover {
+  color: #fff;
+}
+
+.Window-module__o6U_EW__windowContent {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  height: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Window-module__o6U_EW__emptyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  padding: 20px;
+}
+
+
+/* [project]/app/windows10-components/ChromeBrowser.module.css [app-client] (css) */
+.ChromeBrowser-module__sf7d7q__browser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.ChromeBrowser-module__sf7d7q__toolbar {
+  background-color: #dee1e6;
+  padding: 8px 8px 0;
+  user-select: none;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.ChromeBrowser-module__sf7d7q__tabBar {
+  display: flex;
+  align-items: center;
+}
+
+.ChromeBrowser-module__sf7d7q__tab {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 10px;
+  min-width: 200px;
+  max-width: 240px;
+  height: 32px;
+  margin-right: 1px;
+  transition: background-color .2s;
+}
+
+.ChromeBrowser-module__sf7d7q__tab:hover {
+  background-color: #f1f3f4;
+}
+
+.ChromeBrowser-module__sf7d7q__favicon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ChromeBrowser-module__sf7d7q__tabTitle {
+  flex: 1;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ChromeBrowser-module__sf7d7q__closeTab {
+  opacity: .6;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.ChromeBrowser-module__sf7d7q__closeTab:hover {
+  opacity: 1;
+  background-color: #e8eaed;
+  border-radius: 50%;
+}
+
+.ChromeBrowser-module__sf7d7q__newTab {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+.ChromeBrowser-module__sf7d7q__newTab:hover {
+  background-color: #e8eaed;
+}
+
+.ChromeBrowser-module__sf7d7q__addressBar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px;
+  gap: 8px;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.ChromeBrowser-module__sf7d7q__navigationButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.ChromeBrowser-module__sf7d7q__navButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.ChromeBrowser-module__sf7d7q__navButton:hover {
+  background-color: #f1f3f4;
+}
+
+.ChromeBrowser-module__sf7d7q__navButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.ChromeBrowser-module__sf7d7q__urlForm {
+  flex: 1;
+}
+
+.ChromeBrowser-module__sf7d7q__urlBar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f4;
+  border-radius: 20px;
+  padding: 0 12px;
+  height: 36px;
+}
+
+.ChromeBrowser-module__sf7d7q__searchIcon {
+  color: #5f6368;
+  margin-right: 8px;
+}
+
+.ChromeBrowser-module__sf7d7q__urlInput {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  color: #202124;
+}
+
+.ChromeBrowser-module__sf7d7q__browserActions {
+  display: flex;
+  gap: 4px;
+}
+
+.ChromeBrowser-module__sf7d7q__actionButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.ChromeBrowser-module__sf7d7q__actionButton:hover {
+  background-color: #f1f3f4;
+}
+
+.ChromeBrowser-module__sf7d7q__browserContent {
+  flex: 1;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ChromeBrowser-module__sf7d7q__loadingIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10;
+}
+
+.ChromeBrowser-module__sf7d7q__loadingBar {
+  height: 100%;
+  background-color: #4285f4;
+}
+
+.ChromeBrowser-module__sf7d7q__iframeWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ChromeBrowser-module__sf7d7q__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.ChromeBrowser-module__sf7d7q__iframe::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.ChromeBrowser-module__sf7d7q__iframe::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ChromeBrowser-module__sf7d7q__iframe::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.ChromeBrowser-module__sf7d7q__iframe::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+@media (width <= 768px) {
+  .ChromeBrowser-module__sf7d7q__browser {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .ChromeBrowser-module__sf7d7q__addressBar {
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .ChromeBrowser-module__sf7d7q__urlBar {
+    height: 32px;
+    padding: 0 8px;
+  }
+
+  .ChromeBrowser-module__sf7d7q__urlInput {
+    font-size: 12px;
+  }
+
+  .ChromeBrowser-module__sf7d7q__navigationButtons {
+    gap: 2px;
+  }
+
+  .ChromeBrowser-module__sf7d7q__navButton {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ChromeBrowser-module__sf7d7q__actionButton {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (width <= 480px) {
+  .ChromeBrowser-module__sf7d7q__browserContent {
+    height: calc(100% - 80px);
+    max-height: calc(100dvh - 160px);
+  }
+
+  .ChromeBrowser-module__sf7d7q__iframeWrapper {
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .ChromeBrowser-module__sf7d7q__browser {
+    max-height: 100%;
+    overflow: hidden;
+  }
+}
+
+
+/* [project]/app/windows10-components/FolderContent.module.css [app-client] (css) */
+.FolderContent-module__Eo7gzG__folderContainer {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  font-family: Segoe UI, Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+.FolderContent-module__Eo7gzG__folderTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #0078d7;
+  border-bottom: 2px solid #0078d7;
+  padding-bottom: 10px;
+}
+
+.FolderContent-module__Eo7gzG__projectItem {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a;
+  border-left: 4px solid #0078d7;
+}
+
+.FolderContent-module__Eo7gzG__projectItem h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0078d7;
+}
+
+.FolderContent-module__Eo7gzG__projectLinks {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.FolderContent-module__Eo7gzG__projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #0078d7;
+  text-decoration: none;
+  font-size: 14px;
+  background-color: #0078d71a;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color .2s;
+}
+
+.FolderContent-module__Eo7gzG__projectLink:hover {
+  background-color: #0078d733;
+  text-decoration: underline;
+}
+
+.FolderContent-module__Eo7gzG__projectItem ul {
+  padding-left: 20px;
+}
+
+.FolderContent-module__Eo7gzG__projectItem li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.FolderContent-module__Eo7gzG__infoCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.FolderContent-module__Eo7gzG__infoRow {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.FolderContent-module__Eo7gzG__infoLabel {
+  font-weight: 600;
+  width: 150px;
+  color: #555;
+}
+
+.FolderContent-module__Eo7gzG__infoValue {
+  flex: 1;
+}
+
+.FolderContent-module__Eo7gzG__contactCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.FolderContent-module__Eo7gzG__contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.FolderContent-module__Eo7gzG__contactIcon {
+  color: #0078d7;
+  margin-right: 15px;
+}
+
+.FolderContent-module__Eo7gzG__contactDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.FolderContent-module__Eo7gzG__contactLabel {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.FolderContent-module__Eo7gzG__contactValue {
+  color: #0078d7;
+  text-decoration: none;
+}
+
+.FolderContent-module__Eo7gzG__contactValue:hover {
+  text-decoration: underline;
+}
+
+.FolderContent-module__Eo7gzG__skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.FolderContent-module__Eo7gzG__skillCategory {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.FolderContent-module__Eo7gzG__skillCategory h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0078d7;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.FolderContent-module__Eo7gzG__skillList {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.FolderContent-module__Eo7gzG__skillList li {
+  margin-bottom: 8px;
+}
+
+.FolderContent-module__Eo7gzG__educationItem {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.FolderContent-module__Eo7gzG__educationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.FolderContent-module__Eo7gzG__educationHeader h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0078d7;
+  margin: 0;
+}
+
+.FolderContent-module__Eo7gzG__educationYear {
+  font-size: 14px;
+  color: #666;
+}
+
+.FolderContent-module__Eo7gzG__educationInstitution {
+  font-size: 16px;
+  color: #333;
+}
+
+.FolderContent-module__Eo7gzG__certificationsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.FolderContent-module__Eo7gzG__certificationItem {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.FolderContent-module__Eo7gzG__certificationItem h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0078d7;
+}
+
+.FolderContent-module__Eo7gzG__certificationIssuer {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.FolderContent-module__Eo7gzG__certificationDate {
+  font-size: 14px;
+  color: #666;
+}
+
+.FolderContent-module__Eo7gzG__additionalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.FolderContent-module__Eo7gzG__infoSection {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.FolderContent-module__Eo7gzG__infoSection h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0078d7;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.FolderContent-module__Eo7gzG__workExperience h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.FolderContent-module__Eo7gzG__workDuration {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.FolderContent-module__Eo7gzG__workDescription {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.FolderContent-module__Eo7gzG__workResponsibilities {
+  padding-left: 20px;
+}
+
+.FolderContent-module__Eo7gzG__workResponsibilities li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.FolderContent-module__Eo7gzG__languageList, .FolderContent-module__Eo7gzG__interestsList {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.FolderContent-module__Eo7gzG__languageList li, .FolderContent-module__Eo7gzG__interestsList li {
+  margin-bottom: 8px;
+}
+
+@media (width <= 768px) {
+  .FolderContent-module__Eo7gzG__skillsGrid, .FolderContent-module__Eo7gzG__certificationsList {
+    grid-template-columns: 1fr;
+  }
+
+  .FolderContent-module__Eo7gzG__educationHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* [project]/app/windows10-components/SocialBrowser.module.css [app-client] (css) */
+.SocialBrowser-module__RT0vVW__browser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  contain: content;
+}
+
+.SocialBrowser-module__RT0vVW__toolbar {
+  background-color: #dee1e6;
+  padding: 8px 8px 0;
+  user-select: none;
+  position: relative;
+  z-index: 3;
+}
+
+.SocialBrowser-module__RT0vVW__tabBar {
+  display: flex;
+  align-items: center;
+}
+
+.SocialBrowser-module__RT0vVW__tab {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 10px;
+  min-width: 200px;
+  max-width: 240px;
+  height: 32px;
+  margin-right: 1px;
+  transition: background-color .2s;
+}
+
+.SocialBrowser-module__RT0vVW__tab:hover {
+  background-color: #f1f3f4;
+}
+
+.SocialBrowser-module__RT0vVW__favicon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SocialBrowser-module__RT0vVW__tabTitle {
+  flex: 1;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.SocialBrowser-module__RT0vVW__closeTab {
+  opacity: .6;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.SocialBrowser-module__RT0vVW__closeTab:hover {
+  opacity: 1;
+  background-color: #e8eaed;
+  border-radius: 50%;
+}
+
+.SocialBrowser-module__RT0vVW__addressBar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px;
+  gap: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.SocialBrowser-module__RT0vVW__navigationButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.SocialBrowser-module__RT0vVW__navButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.SocialBrowser-module__RT0vVW__navButton:hover {
+  background-color: #f1f3f4;
+}
+
+.SocialBrowser-module__RT0vVW__navButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.SocialBrowser-module__RT0vVW__urlBar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f4;
+  border-radius: 20px;
+  padding: 0 12px;
+  height: 36px;
+}
+
+.SocialBrowser-module__RT0vVW__urlIcon {
+  color: #5f6368;
+  margin-right: 8px;
+}
+
+.SocialBrowser-module__RT0vVW__urlText {
+  flex: 1;
+  font-size: 14px;
+  color: #202124;
+}
+
+.SocialBrowser-module__RT0vVW__browserActions {
+  display: flex;
+  gap: 4px;
+}
+
+.SocialBrowser-module__RT0vVW__actionButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.SocialBrowser-module__RT0vVW__actionButton:hover {
+  background-color: #f1f3f4;
+}
+
+.SocialBrowser-module__RT0vVW__browserContent {
+  flex: 1;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.SocialBrowser-module__RT0vVW__loadingIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10;
+}
+
+.SocialBrowser-module__RT0vVW__loadingBar {
+  height: 100%;
+  background-color: #4285f4;
+}
+
+.SocialBrowser-module__RT0vVW__iframeWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  contain: strict;
+}
+
+.SocialBrowser-module__RT0vVW__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.SocialBrowser-module__RT0vVW__iframeActive .SocialBrowser-module__RT0vVW__iframe {
+  pointer-events: auto;
+}
+
+.SocialBrowser-module__RT0vVW__iframeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.SocialBrowser-module__RT0vVW__iframeActive .SocialBrowser-module__RT0vVW__iframeOverlay {
+  display: none;
+}
+
+.SocialBrowser-module__RT0vVW__externalSitePrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.SocialBrowser-module__RT0vVW__externalSiteIcon {
+  margin-bottom: 20px;
+}
+
+.SocialBrowser-module__RT0vVW__externalSiteTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.SocialBrowser-module__RT0vVW__externalSiteDescription {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+.SocialBrowser-module__RT0vVW__externalSiteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0078d7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .2s;
+}
+
+.SocialBrowser-module__RT0vVW__externalSiteButton:hover {
+  background-color: #0063b1;
+}
+
+.SocialBrowser-module__RT0vVW__externalLinkIcon {
+  margin-right: 4px;
+}
+
+
+/* [project]/app/windows10-components/FileExplorer.module.css [app-client] (css) */
+.FileExplorer-module__H4lcwa__fileExplorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.FileExplorer-module__H4lcwa__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.FileExplorer-module__H4lcwa__toolbarButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.FileExplorer-module__H4lcwa__toolbarButton {
+  padding: 5px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.FileExplorer-module__H4lcwa__toolbarButton:hover {
+  background-color: #e0e0e0;
+}
+
+.FileExplorer-module__H4lcwa__searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.FileExplorer-module__H4lcwa__searchInput {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+}
+
+.FileExplorer-module__H4lcwa__explorerContent {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.FileExplorer-module__H4lcwa__sidebar {
+  width: 200px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e0e0e0;
+  padding: 10px 0;
+  overflow-y: auto;
+}
+
+.FileExplorer-module__H4lcwa__sidebarSection {
+  margin-bottom: 20px;
+}
+
+.FileExplorer-module__H4lcwa__sidebarHeader {
+  padding: 5px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+}
+
+.FileExplorer-module__H4lcwa__sidebarItem {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.FileExplorer-module__H4lcwa__sidebarItem:hover {
+  background-color: #e9e9e9;
+}
+
+.FileExplorer-module__H4lcwa__sidebarIcon {
+  margin-right: 8px;
+  color: #0078d7;
+}
+
+.FileExplorer-module__H4lcwa__fileList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.FileExplorer-module__H4lcwa__breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.FileExplorer-module__H4lcwa__breadcrumb span {
+  margin: 0 5px;
+}
+
+.FileExplorer-module__H4lcwa__files {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.FileExplorer-module__H4lcwa__fileItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.FileExplorer-module__H4lcwa__fileItem:hover {
+  background-color: #f0f0f0;
+}
+
+.FileExplorer-module__H4lcwa__fileItem span {
+  margin-top: 5px;
+  font-size: 12px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.FileExplorer-module__H4lcwa__statusBar {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.FileExplorer-module__H4lcwa__statusItem {
+  margin-right: 15px;
+}
+
+
+/* [project]/app/windows10-components/SpotifyPlayer.module.css [app-client] (css) */
+.SpotifyPlayer-module__hQOaba__spotifyContainer {
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  display: flex;
+  overflow: hidden;
+}
+
+
+/* [project]/app/windows10-components/Notepad.module.css [app-client] (css) */
+.Notepad-module__zsyYRq__notepadContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+}
+
+.Notepad-module__zsyYRq__textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-family: Consolas, Monaco, Courier New, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: none;
+  background: #fff;
+  color: #000;
+}
+
+.Notepad-module__zsyYRq__textarea::placeholder {
+  color: #999;
+}
+
+
+/* [project]/app/windows10-components/WebView.module.css [app-client] (css) */
+.WebView-module__o4s5ua__webViewContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.WebView-module__o4s5ua__webView {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* [project]/app/windows10-components/Desktop.module.css [app-client] (css) */
+.Desktop-module__yaRb_a__desktop {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  padding-top: 50px;
+  background: url("/images/windows-wallpaper.png") center / cover no-repeat;
+  min-height: 100vh;
+}
+
+.Desktop-module__yaRb_a__iconGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  max-width: 600px;
+  position: absolute;
+  z-index: 1;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :first-child {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(2), .Desktop-module__yaRb_a__iconGrid > :nth-child(3) {
+  grid-column: auto;
+  justify-self: start;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(4) {
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(5) {
+  grid-column: 2 / 3;
+  justify-self: start;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(6) {
+  grid-column: 1 / 2;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(7) {
+  grid-column: 2 / 3;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(8) {
+  grid-column: 3 / 4;
+}
+
+.Desktop-module__yaRb_a__iconGrid > :nth-child(9) {
+  grid-column: 4 / 5;
+}
+
+
+/* [project]/app/windows10-components/Taskbar.module.css [app-client] (css) */
+.Taskbar-module__wUmIbG__taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #000000b3;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid #ffffff1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  user-select: none;
+  box-shadow: 0 -2px 10px #0000004d;
+}
+
+.Taskbar-module__wUmIbG__left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+  flex: none;
+}
+
+.Taskbar-module__wUmIbG__taskbarIcons {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.Taskbar-module__wUmIbG__startButton {
+  width: 48px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__active {
+  background-color: #0078d7;
+}
+
+.Taskbar-module__wUmIbG__windowsLogo {
+  width: 16px;
+  height: 16px;
+}
+
+.Taskbar-module__wUmIbG__searchContainer {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background-color: #ffffff1a;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 0 10px;
+  width: 215px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Taskbar-module__wUmIbG__searchIcon {
+  margin-right: 8px;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__searchText {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.Taskbar-module__wUmIbG__taskbarIcon {
+  width: 48px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__activeApp {
+  border-bottom: 2px solid #0078d7;
+}
+
+.Taskbar-module__wUmIbG__minimizedApp {
+  border-bottom: 2px solid #ffffff4d;
+}
+
+.Taskbar-module__wUmIbG__appIconSmall {
+  transform: scale(.8);
+}
+
+.Taskbar-module__wUmIbG__right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.Taskbar-module__wUmIbG__systemTray {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.Taskbar-module__wUmIbG__trayIcon {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__dateTime {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__time {
+  font-weight: normal;
+}
+
+.Taskbar-module__wUmIbG__date {
+  font-size: 10px;
+}
+
+.Taskbar-module__wUmIbG__showDesktop {
+  width: 5px;
+  height: 100%;
+  border-left: 1px solid #fff3;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__tooltip {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000c;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.Taskbar-module__wUmIbG__quickSettings {
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  width: 380px;
+  padding: 20px;
+  background: #1e1e1ed9;
+  backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px #00000080, 0 8px 32px #0006, inset 0 1px #ffffff1a;
+  border: 1px solid #ffffff1a;
+  z-index: 1001;
+  animation: .2s ease-out Taskbar-module__wUmIbG__slideUp;
+}
+
+@keyframes Taskbar-module__wUmIbG__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Taskbar-module__wUmIbG__quickSettingsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingTile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  overflow: hidden;
+}
+
+.Taskbar-module__wUmIbG__quickSettingTile:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingTile:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.Taskbar-module__wUmIbG__quickSettingIcon {
+  display: flex;
+  align-items: center;
+}
+
+.Taskbar-module__wUmIbG__quickSettingText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__quickSettingValue {
+  font-size: 12px;
+  color: #fff9;
+}
+
+.Taskbar-module__wUmIbG__statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #888;
+  transition: background-color .3s;
+}
+
+.Taskbar-module__wUmIbG__statusDot.Taskbar-module__wUmIbG__active {
+  background-color: #4caf50;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 2px 8px #0003, inset 0 1px #ffffff1a;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItem:hover {
+  background: #ffffff1f;
+  transform: translateX(2px);
+}
+
+.Taskbar-module__wUmIbG__quickSettingItemContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 80px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItemLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItemValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 40px;
+  text-align: right;
+}
+
+.Taskbar-module__wUmIbG__batteryBar {
+  flex: 1;
+  height: 4px;
+  background-color: #fff3;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.Taskbar-module__wUmIbG__batteryBarFill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width .2s;
+}
+
+.Taskbar-module__wUmIbG__volumeSlider, .Taskbar-module__wUmIbG__brightnessSlider {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff3;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.Taskbar-module__wUmIbG__volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9e62e8;
+  cursor: pointer;
+}
+
+.Taskbar-module__wUmIbG__volumeSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9e62e8;
+  cursor: pointer;
+  border: none;
+}
+
+.Taskbar-module__wUmIbG__brightnessSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+}
+
+.Taskbar-module__wUmIbG__brightnessSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+  border: none;
+}
+
+.Taskbar-module__wUmIbG__actionButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  overflow: hidden;
+  position: relative;
+}
+
+.Taskbar-module__wUmIbG__actionButton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.Taskbar-module__wUmIbG__actionButton:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.Taskbar-module__wUmIbG__actionButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px #0000004d, inset 0 1px #ffffff26;
+}
+
+.Taskbar-module__wUmIbG__calendar {
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  width: 280px;
+  background-color: #1e1e1ef2;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 32px #0006;
+  z-index: 1001;
+  animation: .2s ease-out Taskbar-module__wUmIbG__slideUp;
+}
+
+.Taskbar-module__wUmIbG__calendarHeader {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.Taskbar-module__wUmIbG__calendarTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.Taskbar-module__wUmIbG__calendarDayName {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff9;
+  padding: 4px;
+}
+
+.Taskbar-module__wUmIbG__calendarDay {
+  text-align: center;
+  font-size: 12px;
+  padding: 8px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__calendarDay.Taskbar-module__wUmIbG__currentMonth {
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__calendarDay.Taskbar-module__wUmIbG__otherMonth {
+  color: #ffffff4d;
+}
+
+.Taskbar-module__wUmIbG__calendarDay.Taskbar-module__wUmIbG__today {
+  background-color: #0078d7;
+  font-weight: 600;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__calendarDay:hover:not(.Taskbar-module__wUmIbG__today) {
+  background-color: #ffffff1a;
+}
+
+@media (width <= 768px) {
+  .Taskbar-module__wUmIbG__searchContainer {
+    display: none;
+  }
+
+  .Taskbar-module__wUmIbG__dateTime {
+    padding: 0 5px;
+  }
+
+  .Taskbar-module__wUmIbG__date {
+    display: none;
+  }
+}
+
+@media (width <= 480px) {
+  .Taskbar-module__wUmIbG__taskbar {
+    height: 36px;
+  }
+
+  .Taskbar-module__wUmIbG__startButton {
+    width: 40px;
+  }
+
+  .Taskbar-module__wUmIbG__taskbarIcon {
+    width: 36px;
+  }
+
+  .Taskbar-module__wUmIbG__taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+  }
+
+  .Taskbar-module__wUmIbG__systemTray {
+    display: none;
+  }
+
+  .Taskbar-module__wUmIbG__dateTime {
+    padding: 0 5px;
+  }
+
+  .Taskbar-module__wUmIbG__date {
+    display: none;
+  }
+}
+
+
+/* [project]/app/windows10-components/StartMenu.module.css [app-client] (css) */
+.StartMenu-module__J-tYDW__startMenu {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 350px;
+  height: 600px;
+  background-color: #f0f0f0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 5px 25px #0000004d;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  user-select: none;
+}
+
+.StartMenu-module__J-tYDW__searchBar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.StartMenu-module__J-tYDW__searchBar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.StartMenu-module__J-tYDW__pinnedApps {
+  padding: 10px;
+}
+
+.StartMenu-module__J-tYDW__pinnedApps h3 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.StartMenu-module__J-tYDW__appGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.StartMenu-module__J-tYDW__appTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.StartMenu-module__J-tYDW__appTile:hover {
+  background-color: #e0e0e0;
+}
+
+.StartMenu-module__J-tYDW__appIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.StartMenu-module__J-tYDW__appName {
+  font-size: 12px;
+  text-align: center;
+}
+
+.StartMenu-module__J-tYDW__allApps {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.StartMenu-module__J-tYDW__allApps h3 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.StartMenu-module__J-tYDW__appList {
+  display: flex;
+  flex-direction: column;
+}
+
+.StartMenu-module__J-tYDW__appListItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.StartMenu-module__J-tYDW__appListIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.StartMenu-module__J-tYDW__appListName {
+  font-size: 14px;
+}
+
+.StartMenu-module__J-tYDW__footer {
+  height: 50px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.StartMenu-module__J-tYDW__userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.StartMenu-module__J-tYDW__powerButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.StartMenu-module__J-tYDW__powerButton:hover {
+  background-color: #e0e0e0;
+}
+
+
+/* [project]/app/windows10-components/LoginScreen.module.css [app-client] (css) */
+.LoginScreen-module__-tXg7a__loginScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background-image: url("/images/windows-wallpaper.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 2000;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+}
+
+.LoginScreen-module__-tXg7a__loginScreen:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0006;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.LoginScreen-module__-tXg7a__centerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.LoginScreen-module__-tXg7a__centerAvatar {
+  width: 120px;
+  height: 120px;
+  background: #ffffff26;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid #ffffff4d;
+  box-shadow: 0 8px 32px #0000004d, inset 0 1px #fff3;
+}
+
+.LoginScreen-module__-tXg7a__centerName {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.LoginScreen-module__-tXg7a__passwordForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.LoginScreen-module__-tXg7a__passwordContainer {
+  position: relative;
+  width: 280px;
+}
+
+.LoginScreen-module__-tXg7a__passwordInput {
+  width: 100%;
+  height: 36px;
+  background-color: #fff;
+  border: none;
+  padding: 0 40px 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.LoginScreen-module__-tXg7a__submitButton {
+  width: 50px;
+  height: 50px;
+  background: #ffffff26;
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid #ffffff4d;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 8px 32px #0000004d, inset 0 1px #fff3;
+  position: relative;
+  overflow: hidden;
+}
+
+.LoginScreen-module__-tXg7a__submitButton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #fff3 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.LoginScreen-module__-tXg7a__submitButton:hover {
+  background: #ffffff40;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px #0006, inset 0 1px #ffffff4d;
+}
+
+.LoginScreen-module__-tXg7a__submitButton:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px #0000004d, inset 0 1px #ffffff40;
+}
+
+.LoginScreen-module__-tXg7a__systemIcons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.LoginScreen-module__-tXg7a__systemIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #ffffff1a;
+  backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 8px;
+  border: 1px solid #fff3;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 12px #0003, inset 0 1px #ffffff1a;
+}
+
+.LoginScreen-module__-tXg7a__systemIcon:hover {
+  background: #fff3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #0000004d, inset 0 1px #fff3;
+}
+
+.LoginScreen-module__-tXg7a__systemIcon:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px #0003, inset 0 1px #ffffff26;
+}
+
+.LoginScreen-module__-tXg7a__loader {
+  border: 2px solid #ffffff4d;
+  border-radius: 50%;
+  border-top: 2px solid #fff;
+  width: 16px;
+  height: 16px;
+  animation: 1s linear infinite LoginScreen-module__-tXg7a__spin;
+}
+
+@keyframes LoginScreen-module__-tXg7a__spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.LoginScreen-module__-tXg7a__fadeOut {
+  animation: .8s ease-in forwards LoginScreen-module__-tXg7a__fadeOut;
+}
+
+@keyframes LoginScreen-module__-tXg7a__fadeOut {
+  0% {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+
+  100% {
+    opacity: 0;
+    backdrop-filter: blur();
+    pointer-events: none;
+  }
+}
+
+.LoginScreen-module__-tXg7a__quickSettings {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 380px;
+  padding: 20px;
+  background: #1e1e1ed9;
+  backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px #00000080, 0 8px 32px #0006, inset 0 1px #ffffff1a;
+  border: 1px solid #ffffff1a;
+  z-index: 3000;
+  animation: .2s ease-out LoginScreen-module__-tXg7a__slideUp;
+}
+
+@keyframes LoginScreen-module__-tXg7a__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.LoginScreen-module__-tXg7a__quickSettingsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingTile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  overflow: hidden;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingTile:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingTile:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingIcon {
+  display: flex;
+  align-items: center;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingValue {
+  font-size: 12px;
+  color: #fff9;
+}
+
+.LoginScreen-module__-tXg7a__statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #888;
+  transition: background-color .3s;
+}
+
+.LoginScreen-module__-tXg7a__statusDot.LoginScreen-module__-tXg7a__active {
+  background-color: #4caf50;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 2px 8px #0003, inset 0 1px #ffffff1a;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingItem:hover {
+  background: #ffffff1f;
+  transform: translateX(2px);
+}
+
+.LoginScreen-module__-tXg7a__quickSettingItemContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 80px;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingItemLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.LoginScreen-module__-tXg7a__quickSettingItemValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 40px;
+  text-align: right;
+}
+
+.LoginScreen-module__-tXg7a__volumeSlider, .LoginScreen-module__-tXg7a__brightnessSlider {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff3;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.LoginScreen-module__-tXg7a__volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9e62e8;
+  cursor: pointer;
+}
+
+.LoginScreen-module__-tXg7a__volumeSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9e62e8;
+  cursor: pointer;
+  border: none;
+}
+
+.LoginScreen-module__-tXg7a__brightnessSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+}
+
+.LoginScreen-module__-tXg7a__brightnessSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+  border: none;
+}
+
+.LoginScreen-module__-tXg7a__batteryBar {
+  flex: 1;
+  height: 4px;
+  background-color: #fff3;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.LoginScreen-module__-tXg7a__batteryBarFill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width .2s;
+}
+
+.LoginScreen-module__-tXg7a__actionButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  overflow: hidden;
+  position: relative;
+}
+
+.LoginScreen-module__-tXg7a__actionButton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.LoginScreen-module__-tXg7a__actionButton:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.LoginScreen-module__-tXg7a__actionButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px #0000004d, inset 0 1px #ffffff26;
+}
+
+.LoginScreen-module__-tXg7a__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0003;
+  z-index: 2999;
+}
+
+
+/* [project]/app/windows10-components/LockScreen.module.css [app-client] (css) */
+.LockScreen-module__M-350q__lockScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  cursor: pointer;
+  z-index: 10000;
+  animation: .5s ease-in-out LockScreen-module__M-350q__fadeIn;
+}
+
+@keyframes LockScreen-module__M-350q__fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.LockScreen-module__M-350q__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#0000004d 0%, #0000001a 100%);
+  pointer-events: none;
+}
+
+.LockScreen-module__M-350q__lockScreenContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  text-shadow: 0 2px 8px #00000080;
+}
+
+.LockScreen-module__M-350q__time {
+  font-size: 120px;
+  font-weight: 200;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.LockScreen-module__M-350q__date {
+  font-size: 32px;
+  font-weight: 300;
+  opacity: .95;
+}
+
+.LockScreen-module__M-350q__lockScreenHint {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 4px #00000080;
+  opacity: .9;
+  animation: 2s infinite LockScreen-module__M-350q__bounce;
+}
+
+@keyframes LockScreen-module__M-350q__bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.LockScreen-module__M-350q__lockIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.LockScreen-module__M-350q__hintText {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  background: #0000004d;
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+@media (width <= 768px) {
+  .LockScreen-module__M-350q__time {
+    font-size: 72px;
+  }
+
+  .LockScreen-module__M-350q__date {
+    font-size: 20px;
+  }
+
+  .LockScreen-module__M-350q__lockIcon {
+    font-size: 36px;
+  }
+
+  .LockScreen-module__M-350q__hintText {
+    font-size: 14px;
+  }
+}
+
+
+/* [project]/app/page.module.css [app-client] (css) */
+.page-module__E0kJGG__main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  padding-bottom: 0;
+}
+
+.page-module__E0kJGG__loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 1s ease-out;
+}
+
+.page-module__E0kJGG__loaderOverlay.page-module__E0kJGG__fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/*# sourceMappingURL=app_20d1fd._.css.map*/

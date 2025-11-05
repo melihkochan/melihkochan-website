@@ -1,0 +1,148 @@
+/* [project]/app/windows10-components/StartMenu.module.css [app-client] (css) */
+.StartMenu-module__J-tYDW__startMenu {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 350px;
+  height: 600px;
+  background-color: #f0f0f0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 5px 25px #0000004d;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  user-select: none;
+}
+
+.StartMenu-module__J-tYDW__searchBar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.StartMenu-module__J-tYDW__searchBar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.StartMenu-module__J-tYDW__pinnedApps {
+  padding: 10px;
+}
+
+.StartMenu-module__J-tYDW__pinnedApps h3 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.StartMenu-module__J-tYDW__appGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.StartMenu-module__J-tYDW__appTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.StartMenu-module__J-tYDW__appTile:hover {
+  background-color: #e0e0e0;
+}
+
+.StartMenu-module__J-tYDW__appIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.StartMenu-module__J-tYDW__appName {
+  font-size: 12px;
+  text-align: center;
+}
+
+.StartMenu-module__J-tYDW__allApps {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.StartMenu-module__J-tYDW__allApps h3 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.StartMenu-module__J-tYDW__appList {
+  display: flex;
+  flex-direction: column;
+}
+
+.StartMenu-module__J-tYDW__appListItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.StartMenu-module__J-tYDW__appListIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.StartMenu-module__J-tYDW__appListName {
+  font-size: 14px;
+}
+
+.StartMenu-module__J-tYDW__footer {
+  height: 50px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.StartMenu-module__J-tYDW__userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.StartMenu-module__J-tYDW__powerButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.StartMenu-module__J-tYDW__powerButton:hover {
+  background-color: #e0e0e0;
+}
+
+/*# sourceMappingURL=app_windows10-components_StartMenu_module_b52d8e.css.map*/

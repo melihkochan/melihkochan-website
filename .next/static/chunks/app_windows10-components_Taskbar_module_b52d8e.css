@@ -1,0 +1,535 @@
+/* [project]/app/windows10-components/Taskbar.module.css [app-client] (css) */
+.Taskbar-module__wUmIbG__taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #000000b3;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid #ffffff1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  user-select: none;
+  box-shadow: 0 -2px 10px #0000004d;
+}
+
+.Taskbar-module__wUmIbG__left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+  flex: none;
+}
+
+.Taskbar-module__wUmIbG__taskbarIcons {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.Taskbar-module__wUmIbG__startButton {
+  width: 48px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__active {
+  background-color: #0078d7;
+}
+
+.Taskbar-module__wUmIbG__windowsLogo {
+  width: 16px;
+  height: 16px;
+}
+
+.Taskbar-module__wUmIbG__searchContainer {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background-color: #ffffff1a;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 0 10px;
+  width: 215px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Taskbar-module__wUmIbG__searchIcon {
+  margin-right: 8px;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__searchText {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.Taskbar-module__wUmIbG__taskbarIcon {
+  width: 48px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__activeApp {
+  border-bottom: 2px solid #0078d7;
+}
+
+.Taskbar-module__wUmIbG__minimizedApp {
+  border-bottom: 2px solid #ffffff4d;
+}
+
+.Taskbar-module__wUmIbG__appIconSmall {
+  transform: scale(.8);
+}
+
+.Taskbar-module__wUmIbG__right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.Taskbar-module__wUmIbG__systemTray {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.Taskbar-module__wUmIbG__trayIcon {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__dateTime {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__time {
+  font-weight: normal;
+}
+
+.Taskbar-module__wUmIbG__date {
+  font-size: 10px;
+}
+
+.Taskbar-module__wUmIbG__showDesktop {
+  width: 5px;
+  height: 100%;
+  border-left: 1px solid #fff3;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__tooltip {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000c;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.Taskbar-module__wUmIbG__quickSettings {
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  width: 380px;
+  padding: 20px;
+  background: #1e1e1ed9;
+  backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px #00000080, 0 8px 32px #0006, inset 0 1px #ffffff1a;
+  border: 1px solid #ffffff1a;
+  z-index: 1001;
+  animation: .2s ease-out Taskbar-module__wUmIbG__slideUp;
+}
+
+@keyframes Taskbar-module__wUmIbG__slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Taskbar-module__wUmIbG__quickSettingsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingTile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  overflow: hidden;
+}
+
+.Taskbar-module__wUmIbG__quickSettingTile:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingTile:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.Taskbar-module__wUmIbG__quickSettingIcon {
+  display: flex;
+  align-items: center;
+}
+
+.Taskbar-module__wUmIbG__quickSettingText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__quickSettingValue {
+  font-size: 12px;
+  color: #fff9;
+}
+
+.Taskbar-module__wUmIbG__statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #888;
+  transition: background-color .3s;
+}
+
+.Taskbar-module__wUmIbG__statusDot.Taskbar-module__wUmIbG__active {
+  background-color: #4caf50;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 2px 8px #0003, inset 0 1px #ffffff1a;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItem:hover {
+  background: #ffffff1f;
+  transform: translateX(2px);
+}
+
+.Taskbar-module__wUmIbG__quickSettingItemContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 80px;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItemLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__quickSettingItemValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 40px;
+  text-align: right;
+}
+
+.Taskbar-module__wUmIbG__batteryBar {
+  flex: 1;
+  height: 4px;
+  background-color: #fff3;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.Taskbar-module__wUmIbG__batteryBarFill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width .2s;
+}
+
+.Taskbar-module__wUmIbG__volumeSlider, .Taskbar-module__wUmIbG__brightnessSlider {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff3;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.Taskbar-module__wUmIbG__volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9e62e8;
+  cursor: pointer;
+}
+
+.Taskbar-module__wUmIbG__volumeSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9e62e8;
+  cursor: pointer;
+  border: none;
+}
+
+.Taskbar-module__wUmIbG__brightnessSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+}
+
+.Taskbar-module__wUmIbG__brightnessSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+  border: none;
+}
+
+.Taskbar-module__wUmIbG__actionButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff14;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 4px 12px #0000004d, inset 0 1px #ffffff1a;
+  overflow: hidden;
+  position: relative;
+}
+
+.Taskbar-module__wUmIbG__actionButton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.Taskbar-module__wUmIbG__actionButton:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #0006, inset 0 1px #fff3;
+}
+
+.Taskbar-module__wUmIbG__actionButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px #0000004d, inset 0 1px #ffffff26;
+}
+
+.Taskbar-module__wUmIbG__calendar {
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  width: 280px;
+  background-color: #1e1e1ef2;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 32px #0006;
+  z-index: 1001;
+  animation: .2s ease-out Taskbar-module__wUmIbG__slideUp;
+}
+
+.Taskbar-module__wUmIbG__calendarHeader {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.Taskbar-module__wUmIbG__calendarTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.Taskbar-module__wUmIbG__calendarDayName {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff9;
+  padding: 4px;
+}
+
+.Taskbar-module__wUmIbG__calendarDay {
+  text-align: center;
+  font-size: 12px;
+  padding: 8px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.Taskbar-module__wUmIbG__calendarDay.Taskbar-module__wUmIbG__currentMonth {
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__calendarDay.Taskbar-module__wUmIbG__otherMonth {
+  color: #ffffff4d;
+}
+
+.Taskbar-module__wUmIbG__calendarDay.Taskbar-module__wUmIbG__today {
+  background-color: #0078d7;
+  font-weight: 600;
+  color: #fff;
+}
+
+.Taskbar-module__wUmIbG__calendarDay:hover:not(.Taskbar-module__wUmIbG__today) {
+  background-color: #ffffff1a;
+}
+
+@media (width <= 768px) {
+  .Taskbar-module__wUmIbG__searchContainer {
+    display: none;
+  }
+
+  .Taskbar-module__wUmIbG__dateTime {
+    padding: 0 5px;
+  }
+
+  .Taskbar-module__wUmIbG__date {
+    display: none;
+  }
+}
+
+@media (width <= 480px) {
+  .Taskbar-module__wUmIbG__taskbar {
+    height: 36px;
+  }
+
+  .Taskbar-module__wUmIbG__startButton {
+    width: 40px;
+  }
+
+  .Taskbar-module__wUmIbG__taskbarIcon {
+    width: 36px;
+  }
+
+  .Taskbar-module__wUmIbG__taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+  }
+
+  .Taskbar-module__wUmIbG__systemTray {
+    display: none;
+  }
+
+  .Taskbar-module__wUmIbG__dateTime {
+    padding: 0 5px;
+  }
+
+  .Taskbar-module__wUmIbG__date {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=app_windows10-components_Taskbar_module_b52d8e.css.map*/

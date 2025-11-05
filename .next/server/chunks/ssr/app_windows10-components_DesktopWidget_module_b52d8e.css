@@ -1,0 +1,83 @@
+/* [project]/app/windows10-components/DesktopWidget.module.css [app-client] (css) */
+.DesktopWidget-module__0isu5W__widgetContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+@media (width <= 768px) {
+  .DesktopWidget-module__0isu5W__widgetContainer {
+    display: none;
+  }
+}
+
+@media (width <= 480px) {
+  .DesktopWidget-module__0isu5W__widgetContainer {
+    display: none;
+  }
+}
+
+.DesktopWidget-module__0isu5W__widget {
+  background: #ffffff1a;
+  backdrop-filter: blur(20px);
+  border: 1px solid #fff3;
+  border-radius: 16px;
+  padding: 20px 30px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 8px 32px #0000004d, inset 0 1px #fff3;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.DesktopWidget-module__0isu5W__widget:hover {
+  background: #ffffff26;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px #0006, inset 0 1px #ffffff4d;
+}
+
+.DesktopWidget-module__0isu5W__widget:active {
+  transform: translateY(0)scale(.98);
+}
+
+.DesktopWidget-module__0isu5W__timeDisplay {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px #00000080;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.DesktopWidget-module__0isu5W__dateDisplay {
+  font-size: 14px;
+  color: #ffffffe6;
+  text-shadow: 0 1px 4px #00000080;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.DesktopWidget-module__0isu5W__fading {
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+@keyframes DesktopWidget-module__0isu5W__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.DesktopWidget-module__0isu5W__widget {
+  animation: .6s DesktopWidget-module__0isu5W__fadeIn;
+}
+
+/*# sourceMappingURL=app_windows10-components_DesktopWidget_module_b52d8e.css.map*/

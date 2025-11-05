@@ -1,0 +1,246 @@
+/* [project]/app/windows10-components/DesktopGallery.module.css [app-client] (css) */
+.DesktopGallery-module__RWuM0a__galleryContainer {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  width: 320px;
+  background: #1e1e1ed9;
+  backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 60px #00000080, 0 8px 32px #0006, inset 0 1px #ffffff1a;
+  border: 1px solid #ffffff1a;
+  z-index: 100;
+  animation: .3s ease-out DesktopGallery-module__RWuM0a__slideInUp;
+}
+
+@keyframes DesktopGallery-module__RWuM0a__slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.DesktopGallery-module__RWuM0a__galleryHeader {
+  margin-bottom: 16px;
+}
+
+.DesktopGallery-module__RWuM0a__galleryTitle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.DesktopGallery-module__RWuM0a__galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  background: #ffffff0d;
+  border: 2px solid #ffffff1a;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ffffff1a 0%, #fff0 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 1;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem:hover:before {
+  opacity: 1;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem.DesktopGallery-module__RWuM0a__hovered {
+  transform: translateY(-4px)scale(1.05);
+  border-color: #ffffff4d;
+  box-shadow: 0 8px 24px #0006, 0 0 0 4px #ffffff1a;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem.DesktopGallery-module__RWuM0a__selected {
+  border-color: #0078d7;
+  box-shadow: 0 0 0 3px #0078d74d, 0 8px 24px #0078d733;
+}
+
+.DesktopGallery-module__RWuM0a__galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem:hover .DesktopGallery-module__RWuM0a__galleryImage {
+  transform: scale(1.1);
+}
+
+.DesktopGallery-module__RWuM0a__imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(#00000080 0%, #0000 40%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.DesktopGallery-module__RWuM0a__galleryItem:hover .DesktopGallery-module__RWuM0a__imageOverlay {
+  opacity: 1;
+}
+
+.DesktopGallery-module__RWuM0a__imageNumber {
+  background: #000000b3;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.DesktopGallery-module__RWuM0a__imageModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: .3s ease-out DesktopGallery-module__RWuM0a__fadeIn;
+  cursor: pointer;
+}
+
+@keyframes DesktopGallery-module__RWuM0a__fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.DesktopGallery-module__RWuM0a__fullImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px #000c;
+  animation: .3s ease-out DesktopGallery-module__RWuM0a__scaleIn;
+  cursor: pointer;
+}
+
+@keyframes DesktopGallery-module__RWuM0a__scaleIn {
+  from {
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.DesktopGallery-module__RWuM0a__closeButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: #ffffff1a;
+  backdrop-filter: blur(20px);
+  border: 2px solid #fff3;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+  z-index: 10001;
+}
+
+.DesktopGallery-module__RWuM0a__closeButton:hover {
+  background: #fff3;
+  border-color: #ffffff4d;
+  transform: scale(1.1);
+}
+
+.DesktopGallery-module__RWuM0a__closeButton:active {
+  transform: scale(.95);
+}
+
+@media (width <= 768px) {
+  .DesktopGallery-module__RWuM0a__galleryContainer {
+    width: 280px;
+    padding: 16px;
+    bottom: 50px;
+    right: 10px;
+  }
+
+  .DesktopGallery-module__RWuM0a__galleryGrid {
+    gap: 8px;
+  }
+
+  .DesktopGallery-module__RWuM0a__galleryTitle {
+    font-size: 16px;
+  }
+
+  .DesktopGallery-module__RWuM0a__closeButton {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (width <= 480px) {
+  .DesktopGallery-module__RWuM0a__galleryContainer {
+    width: 240px;
+    padding: 12px;
+    bottom: 60px;
+  }
+
+  .DesktopGallery-module__RWuM0a__galleryGrid {
+    gap: 6px;
+  }
+}
+
+/*# sourceMappingURL=app_windows10-components_DesktopGallery_module_b52d8e.css.map*/

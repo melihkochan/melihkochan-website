@@ -440,7 +440,7 @@ const Hero: React.FC<HeroProps> = ({
           )}
           
           {/* Social Links */}
-          <div className="flex justify-center items-center flex-wrap gap-12 md:gap-16 lg:gap-20 xl:gap-24" style={{ marginTop: '30px' }}>
+          <div className="flex justify-center items-center flex-wrap gap-4 sm:gap-6 md:gap-16 lg:gap-20 xl:gap-24" style={{ marginTop: '30px' }}>
             {defaultSocialLinks.map((link, index) => (
               <a
                 key={index}
@@ -448,7 +448,7 @@ const Hero: React.FC<HeroProps> = ({
                 target={link.download ? undefined : "_blank"}
                 rel={link.download ? undefined : "noopener noreferrer"}
                 download={link.download ? link.url.split('/').pop() : undefined}
-                className="text-white text-2xl md:text-3xl hover:text-orange-300 transition-colors duration-300 hover:scale-110 px-4"
+                className="text-white text-xl sm:text-2xl md:text-3xl hover:text-orange-300 transition-colors duration-300 hover:scale-110 px-2 sm:px-3 md:px-4"
                 aria-label={link.name}
               >
                 {link.icon}

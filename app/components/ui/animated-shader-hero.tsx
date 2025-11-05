@@ -382,7 +382,7 @@ const Hero: React.FC<HeroProps> = ({
   // Use provided social links or fallback to defaults
   const defaultSocialLinks: SocialLink[] = socialLinks || [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/melih-kochan-7961371a2/', icon: <FaLinkedin /> },
-    { name: 'GitHub', url: 'https://github.com/melihkochan/melihkochan-website', icon: <FaGithub /> },
+    { name: 'GitHub', url: 'https://github.com/melihkochan', icon: <FaGithub /> },
     { name: 'Twitter', url: 'https://x.com/melihkochan1', icon: <FaTwitter /> },
     { name: 'Instagram', url: 'https://www.instagram.com/melih_kochan/', icon: <FaInstagram /> },
     { name: 'YouTube', url: 'https://music.youtube.com/channel/UCH7mSmrradMTPpMkmDFCcIQ', icon: <FaYoutube /> },

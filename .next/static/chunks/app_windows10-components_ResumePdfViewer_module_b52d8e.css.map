@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/windows10-components/ResumePdfViewer.module.css"],"sourcesContent":[".pdfViewer {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n  background-color: #f0f0f0;\n  overflow: hidden;\n}\n\n.toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 10px;\n  background-color: #f0f0f0;\n  border-bottom: 1px solid #e0e0e0;\n  flex-shrink: 0;\n}\n\n.toolbarButtons {\n  display: flex;\n  gap: 5px;\n}\n\n.toolbarButton {\n  padding: 5px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 14px;\n}\n\n.toolbarButton:hover {\n  background-color: #e0e0e0;\n}\n\n.toolbarActions {\n  display: flex;\n  gap: 5px;\n}\n\n.actionButton {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  padding: 5px 10px;\n  background: none;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 14px;\n}\n\n.actionButton:hover {\n  background-color: #e0e0e0;\n}\n\n.pdfContent {\n  flex: 1;\n  overflow-y: auto;\n  background-color: #fff;\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n  margin: 10px;\n  border: 1px solid #ddd;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;AASA;;;;;;;;;;AAUA;;;;;AAKA;;;;;;;;AAQA;;;;AAIA;;;;;AAKA;;;;;;;;;;;;AAYA;;;;AAIA"}},
-    {"offset": {"line": 66, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

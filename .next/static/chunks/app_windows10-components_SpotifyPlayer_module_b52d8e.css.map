@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/windows10-components/SpotifyPlayer.module.css"],"sourcesContent":[".spotifyContainer {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #121212;\r\n  display: flex;\r\n  overflow: hidden;\r\n}\r\n"],"names":[],"mappings":"AAAA"}},
-    {"offset": {"line": 8, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

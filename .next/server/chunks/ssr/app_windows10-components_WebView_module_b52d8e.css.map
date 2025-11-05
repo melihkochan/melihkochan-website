@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/windows10-components/WebView.module.css"],"sourcesContent":[".webViewContainer {\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: hidden;\r\n}\r\n\r\n.webView {\r\n  width: 100%;\r\n  height: 100%;\r\n  border: none;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;AAMA"}},
-    {"offset": {"line": 12, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

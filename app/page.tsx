@@ -27,8 +27,7 @@ export default function Home() {
         { name: 'GitHub', url: 'https://github.com/melihkochan', icon: <FaGithub /> },
         { name: 'Twitter', url: 'https://x.com/melihkochan1', icon: <FaTwitter /> },
         { name: 'Instagram', url: 'https://www.instagram.com/melih_kochan/', icon: <FaInstagram /> },
-        { name: 'YouTube', url: 'https://music.youtube.com/channel/UCH7mSmrradMTPpMkmDFCcIQ', icon: <FaYoutube /> },
-        { name: 'CV', url: '/melihkochancv.pdf', icon: <FaFilePdf />, download: true },
+        { name: 'YouTube', url: 'https://music.youtube.com/channel/UCH7mSmrradMTPpMkmDFCcIQ', icon: <FaYoutube /> }
       ]}
       className=""
     />

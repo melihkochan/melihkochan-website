@@ -386,7 +386,6 @@ const Hero: React.FC<HeroProps> = ({
     { name: 'Twitter', url: 'https://x.com/melihkochan1', icon: <FaTwitter /> },
     { name: 'Instagram', url: 'https://www.instagram.com/melih_kochan/', icon: <FaInstagram /> },
     { name: 'YouTube', url: 'https://music.youtube.com/channel/UCH7mSmrradMTPpMkmDFCcIQ', icon: <FaYoutube /> },
-    { name: 'CV', url: '/melihkochancv.pdf', icon: <FaFilePdf />, download: true },
   ];
 
   return (

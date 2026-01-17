@@ -19,7 +19,7 @@ export async function GET() {
 
     const repos = await response.json();
 
-    // Özel homepage linkleri
+    // Özel homepage linkleri (GitHub'da homepage tanımlı değilse veya farklı bir link kullanmak istiyorsak)
     const customHomepages: Record<string, string> = {
       "WhereAmI": "https://whereami-mu.vercel.app/",
     };
@@ -29,6 +29,7 @@ export async function GET() {
       title: repo.name,
       description: repo.description || null,
       url: repo.html_url,
+      // Önce customHomepages'e bak, yoksa GitHub'dan gelen homepage'i kullan
       homepage: customHomepages[repo.name] || repo.homepage || null,
       language: repo.language || "Other",
       stars: repo.stargazers_count,

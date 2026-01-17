@@ -6,6 +6,7 @@ import { Link as LinkType } from "@/types";
 import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import * as React from "react";
 
 interface SelectedLink {
   isActive: boolean;
@@ -34,7 +35,7 @@ export default function Body({
   }, [params]);
 
   const getChars = (word: string) => {
-    let chars: JSX.Element[] = [];
+    let chars: React.ReactElement[] = [];
     word.split("").forEach((char, i) => {
       chars.push(
         <motion.span

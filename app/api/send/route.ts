@@ -14,22 +14,30 @@ const Email = z.object({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    console.log(body);
+    console.log("📧 Contact form submission:", body);
+    
     const {
       success: zodSuccess,
       data: zodData,
       error: zodError,
     } = Email.safeParse(body);
-    if (!zodSuccess)
-      return Response.json({ error: zodError?.message }, { status: 400 });
+    
+    if (!zodSuccess) {
+      console.error("❌ Validation error:", zodError);
+      return Response.json({ 
+        error: zodError?.issues?.[0]?.message || "Form doğrulama hatası" 
+      }, { status: 400 });
+    }
 
     if (!resend) {
-      console.error("RESEND_API_KEY environment variable is not set");
+      console.error("❌ RESEND_API_KEY environment variable is not set");
       return Response.json({ 
         error: "Email servisi yapılandırılmamış. Lütfen RESEND_API_KEY environment variable'ını ekleyin." 
       }, { status: 500 });
     }
 
+    console.log("📤 Sending email to:", config.email);
+    
     const { data: resendData, error: resendError } = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
       to: [config.email],
@@ -43,14 +51,18 @@ export async function POST(req: Request) {
     });
 
     if (resendError) {
-      console.error("Resend error:", resendError);
+      console.error("❌ Resend error:", resendError);
       return Response.json({ 
         error: resendError.message || "Email gönderilirken bir hata oluştu." 
       }, { status: 500 });
     }
 
+    console.log("✅ Email sent successfully:", resendData);
     return Response.json(resendData);
-  } catch (error) {
-    return Response.json({ error }, { status: 500 });
+  } catch (error: any) {
+    console.error("❌ Unexpected error:", error);
+    return Response.json({ 
+      error: error?.message || "Beklenmeyen bir hata oluştu." 
+    }, { status: 500 });
   }
 }

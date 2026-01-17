@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Archivo_Black } from "next/font/google";
+import React from "react";
 import "./globals.css";
 import ElasticCursor from "@/components/ui/ElasticCursor";
 import Particles from "@/components/Particles";

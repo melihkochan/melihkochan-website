@@ -1,30 +1,98 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Archivo_Black } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import ElasticCursor from "@/components/ui/ElasticCursor";
+import Particles from "@/components/Particles";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import FunnyThemeToggle from "@/components/theme/funny-theme-toggle";
+import Footer from "@/components/footer/footer";
+import Script from "next/script";
+import Preloader from "@/components/preloader";
+import EasterEggs from "@/components/easter-eggs";
+import { config } from "@/data/config";
+import SocketContextProvider from "@/contexts/socketio";
+import RemoteCursors from "@/components/realtime/remote-cursors";
 
 export const metadata: Metadata = {
-  title: "Melih KOÇHAN - Personal Portfolio",
-  description: "Melih KOÇHAN'ın kişisel portfolyo web sitesi",
+  title: config.title,
+  description: config.description.long,
+  keywords: config.keywords,
+  authors: [{ name: config.author }],
+  openGraph: {
+    title: config.title,
+    description: config.description.short,
+    url: config.site,
+    images: [
+      {
+        url: config.ogImg,
+        width: 800,
+        height: 600,
+        alt: "Portfolio preview",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: config.title,
+    description: config.description.short,
+    images: [config.ogImg],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" style={{ height: '100%' }}>
+    <html lang="en" className={[archivoBlack.className].join(" ")} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/m-favicon.svg" type="image/svg+xml" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/m-favicon-32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/m-favicon-16.png" />
+        <Script
+          defer
+          src={process.env.UMAMI_DOMAIN}
+          data-website-id={process.env.UMAMI_SITE_ID}
+        ></Script>
+        {/* <Analytics /> */}
       </head>
-      <body className={inter.className} style={{ height: '100%', margin: 0, padding: 0 }}>
-        {children}
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          <Particles
+            className="fixed inset-0 -z-10 animate-fade-in"
+            quantity={100}
+          />
+          <Preloader>
+            <SocketContextProvider>
+              <RemoteCursors />
+              <TooltipProvider>
+                <div className="fixed top-4 right-4 z-50">
+                  <FunnyThemeToggle className="w-6 h-6" />
+                </div>
+                {children}
+                <Footer />
+              </TooltipProvider>
+            </SocketContextProvider>
+            <Toaster />
+            <EasterEggs />
+            <ElasticCursor />
+          </Preloader>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-

@@ -1,35 +1,30 @@
-"use client"
+"use client";
 
-import React from "react"
-import Hero from "./components/ui/animated-shader-hero"
-import { 
-  FaLinkedin, 
-  FaGithub, 
-  FaTwitter, 
-  FaInstagram, 
-  FaYoutube, 
-  FaTwitch,
-  FaTiktok,
-  FaFilePdf
-} from 'react-icons/fa'
+import React from "react";
+import SmoothScroll from "@/components/smooth-scroll";
+import { cn } from "@/lib/utils";
+import AnimatedBackground from "@/components/animated-background";
+import SkillsSection from "@/components/sections/skills";
+import ProjectsSection from "@/components/sections/projects";
+import ContactSection from "@/components/sections/contact";
+import HeroSection from "@/components/sections/hero";
 
-export default function Home() {
+function MainPage() {
   return (
-    <Hero
-      headline={{
-        line1: "Melih Koçhan",
-        line2: ""
-      }}
-      subtitle=""
-      description="This is a simple welcome page for now. Feel free to explore the links and discover more!"
-      socialLinks={[
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/melih-kochan-7961371a2/', icon: <FaLinkedin /> },
-        { name: 'GitHub', url: 'https://github.com/melihkochan', icon: <FaGithub /> },
-        { name: 'Twitter', url: 'https://x.com/melihkochan1', icon: <FaTwitter /> },
-        { name: 'Instagram', url: 'https://www.instagram.com/melih_kochan/', icon: <FaInstagram /> },
-        { name: 'YouTube', url: 'https://music.youtube.com/channel/UCH7mSmrradMTPpMkmDFCcIQ', icon: <FaYoutube /> }
-      ]}
-      className=""
-    />
-  )
+    <>
+      <SmoothScroll>
+        <main className={cn("bg-slate-100 dark:bg-transparent")}>
+          <div className="top-0 z-0 fixed w-full h-screen">
+            <AnimatedBackground />
+          </div>
+          <HeroSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ContactSection />
+        </main>
+      </SmoothScroll>
+    </>
+  );
 }
+
+export default MainPage;

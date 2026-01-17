@@ -34,32 +34,39 @@ const ContactForm = () => {
         }),
       });
       const data = await res.json();
-      if (data.error) throw new Error(data.error);
+      
+      if (!res.ok) {
+        throw new Error(data.error || "Bir hata oluştu");
+      }
+      
       toast({
-        title: "Thank you!",
-        description: "I'll get back to you as soon as possible.",
+        title: "Mesaj Gönderildi! ✅",
+        description: "En kısa sürede size dönüş yapacağım.",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
-      setLoading(false);
+      
       setFullName("");
       setEmail("");
       setMessage("");
+      
       const timer = setTimeout(() => {
         router.push("/");
         clearTimeout(timer);
-      }, 1000);
-    } catch (err) {
+      }, 2000);
+    } catch (err: any) {
+      const errorMessage = err?.message || "Bir hata oluştu. Lütfen tekrar deneyin.";
       toast({
-        title: "Error",
-        description: "Something went wrong! Please check the fields.",
+        title: "Hata ❌",
+        description: errorMessage,
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),
         variant: "destructive",
       });
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
   return (
     <form className="min-w-7xl mx-auto sm:mt-4" onSubmit={handleSubmit}>

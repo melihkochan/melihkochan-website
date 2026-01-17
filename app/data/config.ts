@@ -18,7 +18,7 @@ const config = {
     "Next.js",
   ],
   author: "Melih Koçhan",
-  email: "melihkochan@example.com",
+  email: "melihkochan00@gmail.com",
   site: "https://melihkochan.com",
 
   get ogImg() {

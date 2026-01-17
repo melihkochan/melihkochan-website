@@ -24,13 +24,17 @@ export async function POST(req: Request) {
       return Response.json({ error: zodError?.message }, { status: 400 });
 
     if (!resend) {
-      return Response.json({ error: "Email service not configured" }, { status: 500 });
+      console.error("RESEND_API_KEY environment variable is not set");
+      return Response.json({ 
+        error: "Email servisi yapılandırılmamış. Lütfen RESEND_API_KEY environment variable'ını ekleyin." 
+      }, { status: 500 });
     }
 
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Porfolio <onboarding@resend.dev>",
+      from: "Portfolio <onboarding@resend.dev>",
       to: [config.email],
-      subject: "Contact me from portfolio",
+      replyTo: zodData.email,
+      subject: `Portfolio İletişim: ${zodData.fullName}`,
       react: React.createElement(EmailTemplate, {
         fullName: zodData.fullName,
         email: zodData.email,
@@ -39,7 +43,10 @@ export async function POST(req: Request) {
     });
 
     if (resendError) {
-      return Response.json({ resendError }, { status: 500 });
+      console.error("Resend error:", resendError);
+      return Response.json({ 
+        error: resendError.message || "Email gönderilirken bir hata oluştu." 
+      }, { status: 500 });
     }
 
     return Response.json(resendData);

@@ -34,12 +34,24 @@ A modern, interactive portfolio website featuring a 3D keyboard animation and sm
    npm install
    ```
 
-2. Run the development server:
+2. Create a `.env.local` file in the root directory:
+   ```env
+   RESEND_API_KEY=re_your_api_key_here
+   ```
+
+3. **Setup Resend API (for Contact Form):**
+   - Go to [Resend.com](https://resend.com) and create an account
+   - Navigate to API Keys section
+   - Create a new API key
+   - Copy the key and add it to `.env.local` as `RESEND_API_KEY`
+   - Update your email in `app/data/config.ts` (replace `melihkochan@example.com` with your real email)
+
+4. Run the development server:
    ```bash
    npm run dev
    ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 

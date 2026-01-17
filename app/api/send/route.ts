@@ -2,6 +2,7 @@ import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
+import * as React from "react";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -26,7 +27,7 @@ export async function POST(req: Request) {
       from: "Porfolio <onboarding@resend.dev>",
       to: [config.email],
       subject: "Contact me from portfolio",
-      react: EmailTemplate({
+      react: React.createElement(EmailTemplate, {
         fullName: zodData.fullName,
         email: zodData.email,
         message: zodData.message,

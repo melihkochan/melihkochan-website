@@ -29,18 +29,17 @@ A modern, interactive portfolio website featuring a 3D keyboard animation and sm
 
 ### Installation
 
-1. Clone the repository
-2. Install dependencies:
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Run the development server:
+2. Run the development server:
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
@@ -60,6 +59,14 @@ A modern, interactive portfolio website featuring a 3D keyboard animation and sm
 ```bash
 npm run build
 ```
+
+## Contact
+
+- **Website:** [melihkochan.com](https://melihkochan.com)
+- **GitHub:** [@melihkochan](https://github.com/melihkochan)
+- **LinkedIn:** [Melih Koçhan](https://www.linkedin.com/in/melih-kochan-7961371a2/)
+- **X (Twitter):** [@melihkochan1](https://x.com/melihkochan1)
+- **Instagram:** [@melih_kochan](https://www.instagram.com/melih_kochan/)
 
 ## License
 
